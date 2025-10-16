@@ -1,0 +1,5 @@
+{
+  "name": "Cursosflix Browse",
+  "description": "A high-fidelity clone of the Netflix browse page, adapted for a premium online course platform. Features a dynamic hero section, horizontally scrolling carousels, and detailed hover effects on course cards. Built with React and Tailwind CSS.",
+  "requestFramePermissions": []
+}

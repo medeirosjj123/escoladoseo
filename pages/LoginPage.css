@@ -1,0 +1,119 @@
+.login-container {
+    background-image: url('https://assets.nflxext.com/ffe/siteui/vlv3/9c5457b8-9ab0-4a04-9fc1-e609d5a37053/781b19d7-3768-468c-a5a2-a75639f356d5/BR-pt-20240122-popsignuptwoweeks-perspective_alpha_website_large.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    color: white;
+}
+
+.login-header {
+    padding: 20px 50px;
+}
+
+.login-logo {
+    color: #e50914;
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+.login-body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+}
+
+.login-card {
+    background-color: rgba(0, 0, 0, 0.75);
+    padding: 60px;
+    border-radius: 4px;
+    width: 100%;
+    max-width: 450px;
+}
+
+.login-card h2 {
+    font-size: 2rem;
+    margin-bottom: 28px;
+}
+
+.login-card input {
+    background-color: #333;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    height: 50px;
+    line-height: 50px;
+    padding: 16px 20px;
+    width: 100%;
+    margin-bottom: 16px;
+}
+
+.login-card button {
+    background-color: #e50914;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 16px;
+    width: 100%;
+    margin-top: 24px;
+    margin-bottom: 12px;
+    cursor: pointer;
+}
+
+.login-help {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.8rem;
+    color: #b3b3b3;
+}
+
+.login-help a {
+    color: #b3b3b3;
+    text-decoration: none;
+}
+
+.login-help a:hover {
+    text-decoration: underline;
+}
+
+.login-signup {
+    margin-top: 40px;
+    color: #737373;
+}
+
+.login-signup a {
+    color: white;
+    text-decoration: none;
+}
+
+.login-signup a:hover {
+    text-decoration: underline;
+}
+
+.login-recaptcha {
+    margin-top: 20px;
+    font-size: 0.8rem;
+    color: #8c8c8c;
+}
+
+.login-recaptcha a {
+    color: #0071eb;
+    text-decoration: none;
+}
+
+.login-recaptcha a:hover {
+    text-decoration: underline;
+}
+
+.login-error {
+    background-color: #e87c03;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 4px;
+    margin-bottom: 16px;
+    font-size: 0.9rem;
+}
