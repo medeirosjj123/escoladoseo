@@ -32,7 +32,7 @@ const LoginPage: React.FC = () => {
     return (
         <div className="login-container">
             <div className="login-header">
-                <h1 className="login-logo">NETFLIX</h1>
+                <h1 className="login-logo">SEO FLIX</h1>
             </div>
             <div className="login-body">
                 <div className="login-card">
