@@ -8,7 +8,14 @@ serve(async (req) => {
   }
 
   try {
-    const { hero_title, hero_description, hero_video_url, course_order } = await req.json()
+    const {
+      hero_title,
+      hero_description,
+      hero_video_url,
+      hero_watch_button_link,
+      hero_info_button_link,
+      course_order
+    } = await req.json()
 
     const supabaseClient = createClient(
       Deno.env.get('SUPABASE_URL') ?? '',
@@ -21,6 +28,8 @@ serve(async (req) => {
         hero_title,
         hero_description,
         hero_video_url,
+        hero_watch_button_link,
+        hero_info_button_link,
         course_order,
       })
       .eq('id', 1) // Assuming we only have one row of configuration

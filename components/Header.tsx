@@ -79,7 +79,7 @@ const Header: React.FC<HeaderProps> = ({ view }) => {
                  <div className="flex items-center justify-between px-4 md:px-8 py-3">
                      <div className="flex items-center space-x-8">
                          <Link to="/">
-                            <h1 className="text-red-600 text-2xl font-bold tracking-wider cursor-pointer">ESCOLA DO SEO</h1>
+                            <h1 className="netflix-logo cursor-pointer">SEO FLIX</h1>
                          </Link>
                          <div className="h-6 w-px bg-gray-700"></div>
                          <Link to="/" className="text-gray-200 hover:text-white transition">
@@ -99,8 +99,7 @@ const Header: React.FC<HeaderProps> = ({ view }) => {
             <div className="flex items-center justify-between px-4 md:px-16 py-4">
                 <div className="flex items-center space-x-8">
                     <Link to="/">
-                        <h1 className="text-red-600 text-2xl font-bold tracking-wider cursor-pointer">ESCOLA DO SEO</h1>
-                    </Link>
+                                                    <h1 className="netflix-logo cursor-pointer">SEO FLIX</h1>                    </Link>
                     <nav className="hidden md:flex items-center space-x-4">
                         <Link to="/" className={`${linkClasses} ${location.pathname === '/' ? activeLinkClasses : inactiveLinkClasses}`}>
                             Início

@@ -10,6 +10,8 @@ const EditMainPage: React.FC = () => {
     const [heroTitle, setHeroTitle] = useState('');
     const [heroDescription, setHeroDescription] = useState('');
     const [heroVideoUrl, setHeroVideoUrl] = useState('');
+    const [heroWatchButtonLink, setHeroWatchButtonLink] = useState('');
+    const [heroInfoButtonLink, setHeroInfoButtonLink] = useState('');
     const [courses, setCourses] = useState<Course[]>([]);
     const [courseOrder, setCourseOrder] = useState<string[]>([]);
     const [loading, setLoading] = useState(true);
@@ -25,6 +27,8 @@ const EditMainPage: React.FC = () => {
                     setHeroTitle(configData.data.hero_title);
                     setHeroDescription(configData.data.hero_description);
                     setHeroVideoUrl(configData.data.hero_video_url);
+                    setHeroWatchButtonLink(configData.data.hero_watch_button_link || '');
+                    setHeroInfoButtonLink(configData.data.hero_info_button_link || '');
                     setCourseOrder(configData.data.course_order || []);
                 }
 
@@ -53,6 +57,8 @@ const EditMainPage: React.FC = () => {
                     hero_title: heroTitle,
                     hero_description: heroDescription,
                     hero_video_url: heroVideoUrl,
+                    hero_watch_button_link: heroWatchButtonLink,
+                    hero_info_button_link: heroInfoButtonLink,
                     course_order: courseOrder,
                 }
             });
@@ -124,6 +130,28 @@ const EditMainPage: React.FC = () => {
                             value={heroVideoUrl}
                             onChange={(e) => setHeroVideoUrl(e.target.value)}
                             placeholder="https://..."
+                            className="w-full bg-black/20 border border-white/20 rounded-md py-2 px-4 text-white placeholder-gray-500 focus:ring-2 focus:ring-red-500 focus:border-red-500 transition"
+                        />
+                    </div>
+                    <div>
+                        <label htmlFor="watchLink" className="block text-sm font-medium text-gray-300 mb-2">Link do Botão "Assistir"</label>
+                        <input
+                            type="text"
+                            id="watchLink"
+                            value={heroWatchButtonLink}
+                            onChange={(e) => setHeroWatchButtonLink(e.target.value)}
+                            placeholder="/curso/id/lesson/id"
+                            className="w-full bg-black/20 border border-white/20 rounded-md py-2 px-4 text-white placeholder-gray-500 focus:ring-2 focus:ring-red-500 focus:border-red-500 transition"
+                        />
+                    </div>
+                    <div>
+                        <label htmlFor="infoLink" className="block text-sm font-medium text-gray-300 mb-2">Link do Botão "Mais Informações"</label>
+                        <input
+                            type="text"
+                            id="infoLink"
+                            value={heroInfoButtonLink}
+                            onChange={(e) => setHeroInfoButtonLink(e.target.value)}
+                            placeholder="/curso/id"
                             className="w-full bg-black/20 border border-white/20 rounded-md py-2 px-4 text-white placeholder-gray-500 focus:ring-2 focus:ring-red-500 focus:border-red-500 transition"
                         />
                     </div>

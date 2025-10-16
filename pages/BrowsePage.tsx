@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { Course, Lesson, Module, HoverCard } from '../components/LoginCard';
 import { PlayIcon } from '../components/Icons';
 import CourseCarousel from '../components/LoginCard';
@@ -201,6 +201,8 @@ const BrowsePage: React.FC = () => {
                 if (config && coursesData) {
                     setHeroCourse({
                         id: '', title: config.hero_title || '', description: config.hero_description || '', heroUrl: config.hero_video_url || '', posterUrl: '', instructor: '', relevance: '', duration: '', totalLessons: 0, level: '', tags: [], year: 0, ageRating: '', seasons: 0, cast: [], genres: [], tagsDetail: [], episodes: {}, modules: [],
+                        heroWatchButtonLink: config.hero_watch_button_link,
+                        heroInfoButtonLink: config.hero_info_button_link,
                     });
 
                     const generatedCarousels = coursesData.map(course => {
@@ -451,16 +453,23 @@ const BrowsePage: React.FC = () => {
                     <h1 className="text-3xl md:text-5xl lg:text-6xl font-extrabold">{heroCourse.title}</h1>
                     <p className="mt-4 text-sm md:text-base lg:text-lg max-w-md">{heroCourse.description}</p>
                     <div className="mt-6 flex items-center space-x-3">
-                        <button className="flex items-center justify-center bg-white text-black font-bold px-6 py-2 rounded hover:bg-gray-200 transition text-lg">
-                            <PlayIcon isHero />
-                            <span className="ml-2">Saiba Mais</span>
-                        </button>
+                        {heroCourse.heroWatchButtonLink && (
+                            <Link to={heroCourse.heroWatchButtonLink} className="flex items-center justify-center bg-white text-black font-bold px-6 py-2 rounded hover:bg-gray-200 transition text-lg">
+                                <PlayIcon isHero />
+                                <span className="ml-2">Assistir</span>
+                            </Link>
+                        )}
+                        {heroCourse.heroInfoButtonLink && (
+                            <Link to={heroCourse.heroInfoButtonLink} className="flex items-center justify-center bg-gray-500/70 text-white font-bold px-6 py-2 rounded hover:bg-gray-500/90 transition text-lg">
+                                <span className="ml-2">Mais Informações</span>
+                            </Link>
+                        )}
                     </div>
                 </div>
             </section>
             
             <div className={`-mt-2 md:-mt-8 lg:-mt-24 relative z-20`}>
-                <main className="space-y-8 pb-24">
+                <main className="space-y-12 pb-24">
                     {continueWatchingCarousel && (
                         <CourseCarousel
                             key={continueWatchingCarousel.title}

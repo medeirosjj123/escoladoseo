@@ -58,6 +58,8 @@ export interface Course {
     lessonOrder?: number;
     progressSeconds?: number;
     totalDurationSeconds?: number;
+    heroWatchButtonLink?: string;
+    heroInfoButtonLink?: string;
 }
 
 // --- HoverCard Component (Portal) ---
